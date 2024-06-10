@@ -2,12 +2,7 @@ pipeline{
     agent any 
     
     stages{
-        stage('Install PhP') {
-            steps {
-                sh 'sudo update-alternatives --set php /usr/bin/php'
-                sh 'sudo update-alternatives --set phar /usr/bin/phar'
-            }
-        }        
+            
         stage('Install dependencies') {
             steps {
                 sh 'composer install --prefer-dist --no-dev'

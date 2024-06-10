@@ -24,7 +24,7 @@ pipeline{
                 sh 'npm install'
             }
         }
-        stage('Install Npm dependencies') {
+        stage('Install Npm Dev) {
             steps {
                 sh 'npm run dev'
             }

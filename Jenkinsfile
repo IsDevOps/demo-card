@@ -22,7 +22,7 @@ pipeline{
     }
     post{
         always{
-            echo "========always========"
+            echo "========always here========"
         }
         success{
             echo "========pipeline executed successfully ========"

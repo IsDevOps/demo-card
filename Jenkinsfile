@@ -5,7 +5,7 @@ pipeline{
         stage('Install dependencies') {
             steps {
                 sh 'composer install --prefer-dist --no-dev'
-                sh 'cd public && php artisan encore prod'
+                sh 'php artisan encore prod'
             }
         }        
         stage('Create Archive') {

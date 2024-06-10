@@ -12,7 +12,7 @@ pipeline{
             steps {
                 sh 'composer install --prefer-dist --no-dev'
             }
-        }    c    
+        }      
         stage('Run Migrations') {
             steps {
                 sh 'php artisan migrate --env=dev'
@@ -32,7 +32,8 @@ pipeline{
         stage('Archive file') {
             steps {
                 sh 'tar -zcvf application.tar.gz public app bootstrap config vendor'
-                 }
-        }
+          }
         }
     }
+}
+    

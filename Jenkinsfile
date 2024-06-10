@@ -2,21 +2,15 @@ pipeline{
     agent any 
     
     stages{
-        stage("A"){
-            steps{
-                echo "========executing A========"
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
+        stage('Install dependencies') {
+            steps {
+                sh 'composer install --prefer-dist --no-dev'
             }
         }
+        stage('Unit tests') {
+            steps {
+                sh 'vendor/bin/phpunit tests'
+            }
+        }
+        }
     }
-}

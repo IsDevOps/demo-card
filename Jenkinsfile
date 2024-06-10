@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Unit tests') {
             steps {
-                sh 'vendor/bin/phpunit'
+                sh './vendor/bin/phpunit '
             }
         }
         }

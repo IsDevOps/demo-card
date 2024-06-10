@@ -4,8 +4,8 @@ pipeline{
     stages{
         stage('Install PhP') {
             steps {
-                sh 'sudo update-alternatives --set php /usr/bin/php$(phpVersion)'
-                sh 'sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)'
+                sh 'sudo update-alternatives --set php /usr/bin/php'
+                sh 'sudo update-alternatives --set phar /usr/bin/phar'
             }
         }        
         stage('Install dependencies') {
